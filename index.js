@@ -99,6 +99,7 @@ async function run() {
                 email: additem.email,
                 quantity: additem.quantity,
                 picture: additem.photourl,
+                company: additem.company,
             }
             const result = await addedCollection.insertOne(doc)
             res.send(result)
