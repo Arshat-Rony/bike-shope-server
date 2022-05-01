@@ -16,13 +16,13 @@ app.use(express.json())
 
 function verifyJWT(req, res, next) {
     const authheader = req.headers.authorization;
+    console.log(req.headers.authorization)
     if (!authheader) {
         res.status(401).send({ message: "Unauthorized access" })
     }
-    console.log(authheader)
     const token = authheader.split(' ')[1]
     jwt.verify(token, process.env.ACCESS_TOKEN, (err, decoded) => {
-        if (error) {
+        if (err) {
             res.status(403).send({ message: "Forbidded access" })
         }
         else {
