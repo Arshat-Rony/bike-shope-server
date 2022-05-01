@@ -29,7 +29,6 @@ function verifyJWT(req, res, next) {
             next()
         }
     })
-    next()
 }
 
 
